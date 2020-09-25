@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+input {
+  width: 50vw;
+  height: 2.5vh;
+  color: rgb(139, 139, 139);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  font-family: "Arial Black", Gadget, sans-serif;
+  margin: 0 auto;
+  background-color: black;
+}
+
+button {
+  height: 3.5vh;
+  background-color: #233553;
+  color: white;
+  border: 2px solid black;
+  font-weight: 800;
+}

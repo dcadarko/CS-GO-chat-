@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS:GO Chat</title>
+    <link rel="stylesheet" href="chat.css" />
+  </head>
+  <body>
+    <div class="client-send">
+      <input
+        type="text"
+        name=""
+        id="message"
+        placeholder="Type your message"
+        onfocus="this.placeholder = ''"
+        onblur="this.placeholder='Type your message'"
+      />
+      <button onclick="send()" id="sendbtn">Send</button>
+      <input
+        type="text"
+        name="user"
+        id="username"
+        placeholder="Enter your steam64 ID here"
+        minlength="17"
+      />
+      <button onclick="setusername()" id="userbtn">Set Steam ID</button>
+      <br />
+      <footer>
+        <a href="https://steamid.xyz/" target="_blank">
+          <p>How can i find my steam64 ID?</p>
+        </a>
+      </footer>
+    </div>
+    <div id="users"></div>
+    <div id="messages"></div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script src="app.js"></script>
+</html>

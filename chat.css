@@ -1,0 +1,84 @@
+body {
+  background-color: black;
+  height: 200%;
+}
+
+#message {
+  width: 80vw;
+  height: 3vh;
+  border-radius: 1cm;
+  background-color: #101927;
+  color: white;
+  border-style: none;
+}
+
+#message::placeholder {
+  color: white;
+}
+.client-send {
+  bottom: 5%;
+  position: absolute;
+}
+
+.client-send button {
+  height: 3vh;
+  background-color: #101927;
+  color: white;
+  border-style: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+#messages {
+  background-color: #101927;
+  width: 80vw;
+  height: 90vh;
+  color: white;
+  overflow: auto;
+}
+
+#sendbtn {
+  visibility: hidden;
+}
+
+#users {
+  position: absolute;
+  right: 2%;
+  width: 15vw;
+  height: 40vh;
+  top: 0%;
+  background-color: #101927;
+}
+
+#username {
+  background-color: #101927;
+  border-style: none;
+  border-radius: 1cm;
+  height: 3vh;
+  width: 10vw;
+  color: white;
+}
+
+#username::placeholder {
+  color: white;
+}
+
+footer {
+  position: inherit;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+#user {
+  float: right;
+  font-size: small;
+}
+
+#userbtn {
+  visibility: hidden;
+}
