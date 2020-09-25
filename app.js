@@ -9,6 +9,10 @@ document.getElementById("message").addEventListener("keydown", (e) => {
   }
 });
 
+window.onbeforeunload = function () {
+  return "Data will be lost if you leave the page, are you sure?";
+};
+
 document.getElementById("message").addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
     e.preventDefault();
