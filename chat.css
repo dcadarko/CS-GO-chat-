@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 body {
   background-color: black;
   height: 200%;
+  font-family: "Montserrat", sans-serif;
 }
 
 #message {
@@ -81,4 +83,10 @@ a {
 
 #userbtn {
   visibility: hidden;
+}
+
+.username-bx {
+  margin-left: 2em;
+  font-size: 18px;
+  font-weight: bolder;
 }

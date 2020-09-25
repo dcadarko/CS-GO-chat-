@@ -44,7 +44,13 @@ var message = " ";
 socket.on("message", (msg) => {
   message = msg;
   document.getElementById("messages").innerHTML +=
-    "<h1>" + username + "</h1>" + msg + "<br>";
+    "<span class=username-bx>" +
+    username +
+    "</span>" +
+    ":" +
+    " " +
+    msg +
+    "<br>";
 });
 
 window.setInterval(function () {
