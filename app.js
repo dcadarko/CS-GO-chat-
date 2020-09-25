@@ -5,7 +5,7 @@ document.getElementById("message").addEventListener("keydown", (e) => {
     e.preventDefault();
     setTimeout(() => {
       document.getElementById("sendbtn").click();
-    }, 350);
+    }, 400);
   }
 });
 
@@ -46,3 +46,8 @@ socket.on("message", (msg) => {
   document.getElementById("messages").innerHTML +=
     "<h1>" + username + "</h1>" + msg + "<br>";
 });
+
+window.setInterval(function () {
+  var messagebox = document.getElementById("messages");
+  messagebox.scrollTop = messagebox.scrollHeight;
+}, 50);
