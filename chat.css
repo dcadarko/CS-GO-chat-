@@ -36,7 +36,7 @@ input:focus {
 #messages {
   background-color: #101927;
   width: 80vw;
-  height: 90vh;
+  height: 88vh;
   color: white;
   overflow: auto;
 }
@@ -50,7 +50,7 @@ input:focus {
   right: 2%;
   width: 15vw;
   height: 40vh;
-  top: 0%;
+  top: 1%;
   background-color: #101927;
 }
 
@@ -89,4 +89,11 @@ a {
   margin-left: 2em;
   font-size: 18px;
   font-weight: bolder;
+}
+
+.right {
+  width: 100vw;
+  text-align: center;
+  position: absolute;
+  bottom: 5%;
 }
