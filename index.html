@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CS:GO Chat</title>
     <link rel="stylesheet" href="chat.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
-
   <body>
     <div class="client-send">
       <input
@@ -30,16 +30,23 @@
       <footer>
         <a href="https://steamid.xyz/" target="_blank">
           <p>How can i find my steam64 ID?</p>
+
+          <div class="right">
+            <p>
+              Warning: some people may use other peoples steam ID, don't trust
+              anyone
+            </p>
+          </div>
         </a>
-        <div class="right">
-          <p>
-            Warning: some people may use other peoples steam ID, don't trust
-            anyone
-          </p>
-        </div>
       </footer>
     </div>
-    <div id="users"></div>
+    <div id="users">
+      <table id="users-table">
+        <th>Username</th>
+        <th>K/D</th>
+        <th>Time played</th>
+      </table>
+    </div>
     <div id="messages"></div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
