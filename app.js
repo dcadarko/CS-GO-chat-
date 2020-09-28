@@ -1,15 +1,18 @@
 var socket = io("https://cs-go-chat.herokuapp.com/");
 
-document.getElementById("message").addEventListener("keydown", (e) => {
+document.body.addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
+    const button = document.getElementById("sendbtn");
     e.preventDefault();
     setTimeout(() => {
       document.getElementById("sendbtn").click();
-    }, 500);
+      button.disabled = true;
+    }, 650);
+    button.disabled = false;
   }
 });
 
-document.getElementById("message").addEventListener("keydown", (e) => {
+document.body.addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
     e.preventDefault();
     document.getElementById("userbtn").click();
@@ -18,7 +21,7 @@ document.getElementById("message").addEventListener("keydown", (e) => {
 
 var send = () => {
   if (
-    document.getElementById("username").value.length == 17 &&
+    document.getElementById("username").value.length > 2 &&
     username.length > 1
   ) {
     socket.emit("message", document.getElementById("message").value);
@@ -29,16 +32,16 @@ var send = () => {
   }
 };
 
+socket.on("user", async (user) => {
+  username = user;
+  console.log(user);
+});
+
 var setusername = () => {
   socket.emit("username", document.getElementById("username").value);
 };
 
 var stats = [];
-
-socket.on("user", async (user) => {
-  username = user;
-  console.log(user);
-});
 
 socket.on("stats", (data) => {
   var table = document.getElementById("users-table");
@@ -75,4 +78,4 @@ socket.on("message", (msg) => {
 window.setInterval(function () {
   var messagebox = document.getElementById("messages");
   messagebox.scrollTop = messagebox.scrollHeight;
-}, 50);
+}, 500);

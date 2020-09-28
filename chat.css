@@ -121,3 +121,10 @@ td {
   position: relative;
   left: 8px;
 }
+
+.other {
+  width: 100%;
+  left: 100%;
+  position: absolute;
+  bottom: 10%;
+}
