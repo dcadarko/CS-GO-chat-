@@ -128,3 +128,11 @@ td {
   position: absolute;
   bottom: 10%;
 }
+
+#users p {
+  position: absolute;
+  bottom: 0;
+  font-size: 13px;
+  text-align: center;
+  width: 100%;
+}

@@ -20,16 +20,9 @@ document.body.addEventListener("keydown", (e) => {
 });
 
 var send = () => {
-  if (
-    document.getElementById("username").value.length > 2 &&
-    username.length > 1
-  ) {
-    socket.emit("message", document.getElementById("message").value);
-    document.getElementById("message").value = " ";
-    return false;
-  } else {
-    alert("Please enter and submit your steam ID");
-  }
+  socket.emit("message", document.getElementById("message").value);
+  document.getElementById("message").value = " ";
+  return false;
 };
 
 socket.on("user", async (user) => {
@@ -65,14 +58,18 @@ var message = " ";
 
 socket.on("message", (msg) => {
   message = msg;
-  document.getElementById("messages").innerHTML +=
-    "<span class=username-bx>" +
-    username +
-    "</span>" +
-    ":" +
-    " " +
-    msg +
-    "<br>";
+  if (username) {
+    document.getElementById("messages").innerHTML +=
+      "<span class=username-bx>" +
+      username +
+      "</span>" +
+      ":" +
+      " " +
+      msg +
+      "<br>";
+  } else {
+    alert("there has been an error");
+  }
 });
 
 window.setInterval(function () {
