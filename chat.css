@@ -136,3 +136,25 @@ td {
   text-align: center;
   width: 100%;
 }
+
+@media (max-width: 600px) {
+  #messages {
+    height: 70vh;
+  }
+
+  .client-send {
+    position: absolute;
+    bottom: 20%;
+  }
+
+  footer {
+    display: none;
+  }
+
+  #username {
+    top: 70%;
+    position: absolute;
+    width: 80vw;
+    left: 0%;
+  }
+}
