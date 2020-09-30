@@ -62,14 +62,18 @@ var message = " ";
 
 socket.on("message", (msg) => {
   message = msg;
-  document.getElementById("messages").innerHTML +=
-    "<span class=username-bx>" +
-    username +
-    "</span>" +
-    ":" +
-    " " +
-    msg +
-    "<br>";
+  var placeholder = document.getElementById("msg-placeholder");
+  placeholder.parentNode.removeChild(placeholder);
+  if (username) {
+    document.getElementById("messages").innerHTML +=
+      "<span class=username-bx>" +
+      username +
+      "</span>" +
+      ":" +
+      " " +
+      msg +
+      "<br>";
+  }
 });
 
 window.setInterval(function () {
