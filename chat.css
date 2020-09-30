@@ -137,9 +137,16 @@ td {
   width: 100%;
 }
 
+.mobile {
+  display: none;
+}
+
 @media (max-width: 600px) {
   #messages {
-    height: 70vh;
+    height: 70%;
+    width: 90vw;
+    position: absolute;
+    left: -1%;
   }
 
   .client-send {
@@ -152,9 +159,25 @@ td {
   }
 
   #username {
-    top: 70%;
+    top: -40%;
     position: absolute;
-    width: 80vw;
+    width: 90vw;
+    left: -5%;
+    border-radius: 0;
+  }
+
+  #message {
+    width: 90vw;
+    left: -5%;
+    top: 100%;
+    position: absolute;
+    border-radius: 0;
+  }
+
+  #users {
+    position: absolute;
+    top: 90%;
+    width: 90%;
     left: 0%;
   }
 }
