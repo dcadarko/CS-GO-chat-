@@ -28,6 +28,10 @@ var send = () => {
 socket.on("user", async (user) => {
   username = user;
   console.log(user);
+  if (username) {
+    var usr = document.getElementById("username");
+    usr.classList.add("username-mobile");
+  }
 });
 
 var setusername = () => {
@@ -58,6 +62,8 @@ var message = " ";
 
 socket.on("message", (msg) => {
   message = msg;
+  var placeholder = document.getElementById("msg-placeholder");
+  placeholder.parentNode.removeChild(placeholder);
   if (username) {
     document.getElementById("messages").innerHTML +=
       "<span class=username-bx>" +
@@ -68,7 +74,7 @@ socket.on("message", (msg) => {
       msg +
       "<br>";
   } else {
-    alert("there has been an error");
+    alert("There has been an error");
   }
 });
 

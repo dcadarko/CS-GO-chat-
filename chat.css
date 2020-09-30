@@ -141,10 +141,15 @@ td {
   display: none;
 }
 
+#msg-placeholder {
+  position: absolute;
+  left: 5%;
+}
+
 @media (max-width: 600px) {
   #messages {
     height: 70%;
-    width: 90vw;
+    width: 100vw;
     position: absolute;
     left: -1%;
   }
@@ -167,7 +172,8 @@ td {
   }
 
   #message {
-    width: 90vw;
+    width: 100vw;
+    height: 5vh;
     left: -5%;
     top: 100%;
     position: absolute;
@@ -179,5 +185,9 @@ td {
     top: 90%;
     width: 90%;
     left: 0%;
+  }
+
+  .username-mobile {
+    display: none;
   }
 }
