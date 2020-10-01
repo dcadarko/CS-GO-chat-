@@ -2,13 +2,16 @@ var socket = io("https://cs-go-chat.herokuapp.com/");
 
 document.body.addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
+    var randint = Math.floor(Math.random() * 350 + 200);
     const button = document.getElementById("sendbtn");
+    var msgbox = document.getElementById("message");
     e.preventDefault();
     setTimeout(() => {
       document.getElementById("sendbtn").click();
       button.disabled = true;
-    }, 650);
+    }, randint);
     button.disabled = false;
+    console.log(randint);
   }
 });
 
@@ -28,10 +31,6 @@ var send = () => {
 socket.on("user", async (user) => {
   username = user;
   console.log(user);
-  if (username) {
-    var usr = document.getElementById("username");
-    usr.classList.add("username-mobile");
-  }
 });
 
 var setusername = () => {
