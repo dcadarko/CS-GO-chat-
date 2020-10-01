@@ -146,6 +146,10 @@ td {
   left: 5%;
 }
 
+.hide {
+  display: none;
+}
+
 @media (max-width: 600px) {
   #messages {
     height: 70%;

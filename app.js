@@ -62,8 +62,8 @@ var message = " ";
 
 socket.on("message", (msg) => {
   message = msg;
-  var placeholder = document.getElementById("msg-placeholder");
-  placeholder.parentNode.removeChild(placeholder);
+  var placehoder = document.getElementById("msg-placeholder");
+  placehoder.classList.add("hide");
   if (username) {
     document.getElementById("messages").innerHTML +=
       "<span class=username-bx>" +
