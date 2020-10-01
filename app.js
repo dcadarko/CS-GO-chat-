@@ -1,8 +1,9 @@
 var socket = io("https://cs-go-chat.herokuapp.com/");
 
+var randint = Math.floor(Math.random() * 350 + 200);
+
 document.body.addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
-    var randint = Math.floor(Math.random() * 350 + 200);
     const button = document.getElementById("sendbtn");
     var msgbox = document.getElementById("message");
     e.preventDefault();
