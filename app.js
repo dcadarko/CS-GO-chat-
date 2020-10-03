@@ -1,7 +1,7 @@
 var socket = io("https://cs-go-chat.herokuapp.com/");
 
 /* Random number of ms to prevent message mixing up */
-var randint = Math.floor(Math.random() * 350 + 250);
+var randint = Math.floor(Math.random() * 250 + 250);
 
 /* Sending a message */
 document.body.addEventListener("keydown", (e) => {
