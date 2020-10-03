@@ -12,7 +12,7 @@ document.body.addEventListener("keydown", (e) => {
     setTimeout(() => {
       document.getElementById("sendbtn").click();
       button.disabled = true;
-    }, randint);
+    }, 350);
     button.disabled = false;
   }
 });
