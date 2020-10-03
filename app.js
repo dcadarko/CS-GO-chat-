@@ -1,19 +1,17 @@
 var socket = io("https://cs-go-chat.herokuapp.com/");
 
 /* Random number of ms to prevent message mixing up */
-var randint = Math.floor(Math.random() * 350 + 200);
+var randint = Math.floor(Math.random() * 350 + 250);
 
 /* Sending a message */
 document.body.addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
-    const button = document.getElementById("sendbtn");
-    var msgbox = document.getElementById("message");
     e.preventDefault();
     setTimeout(() => {
       document.getElementById("sendbtn").click();
-      button.disabled = true;
-    }, 350);
-    button.disabled = false;
+      document.getElementById("sendbtn").disabled = true;
+    }, randint);
+    document.getElementById("sendbtn").disabled = false;
   }
 });
 
