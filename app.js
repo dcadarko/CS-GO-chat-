@@ -14,15 +14,18 @@ document.body.addEventListener("keydown", (e) => {
       button.disabled = true;
     }, randint);
     button.disabled = false;
-    console.log(randint);
   }
 });
 
-/* Old code that i won't remove, because the app is working as it should */
+/* Sending username */
 document.body.addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
     e.preventDefault();
     document.getElementById("userbtn").click();
+    setTimeout(() => {
+      document.getElementById("userbtn").disabled = true;
+    }, randint);
+    document.getElementById("userbtn").disabled = false;
   }
 });
 
@@ -36,7 +39,6 @@ var send = () => {
 /* Getting username */
 socket.on("user", async (user) => {
   username = user;
-  console.log(user);
 });
 
 /* Sending username */
