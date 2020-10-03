@@ -22,10 +22,6 @@ document.body.addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
     e.preventDefault();
     document.getElementById("userbtn").click();
-    setTimeout(() => {
-      document.getElementById("userbtn").disabled = true;
-    }, randint);
-    document.getElementById("userbtn").disabled = false;
   }
 });
 
