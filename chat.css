@@ -152,7 +152,7 @@ td {
 
 @media (max-width: 600px) {
   #messages {
-    height: 90%;
+    height: 70%;
     width: 100vw;
     position: absolute;
     left: -1%;
