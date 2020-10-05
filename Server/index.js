@@ -1,12 +1,13 @@
-var express = require("express");
-var app = express();
-const server = require("http").createServer(app);
-var io = require("socket.io")(server);
-var fetch = require("node-fetch");
-var express = require("express");
+const express = require("express");
+const http = require('http');
+const socket = require("socket.io");
+const fetch = require("node-fetch");
 const cors = require("cors");
 
 /*App initalisation*/
+const app = express();
+const server = http.createServer(app);
+const io = socket(server);
 app.use(cors());
 
 var steamusername = " ";
@@ -19,8 +20,8 @@ io.on("connection", (socket) => {
     io.emit("message", msg);
   });
   /* Getting the steam ID and sending back the steam username */
-  socket.on("username", async (username) => {
-    await fetch(
+  socket.on("username", (username) => {
+    fetch(
       `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${key}&steamids=${username}`
     )
       .then((res) => res.json())
@@ -28,7 +29,7 @@ io.on("connection", (socket) => {
     io.emit("user", steamusername);
     /* Getting the stats and sending them to the front end */
     if (steamusername) {
-      await fetch(
+      fetch(
         `http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=${key}&steamid=${username}`
       )
         .then((res) => res.json())
