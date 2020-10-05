@@ -36,7 +36,7 @@ input:focus {
 #messages {
   background-color: #101927;
   width: 80vw;
-  height: 88vh;
+  height: 85vh;
   color: white;
   overflow: auto;
 }
